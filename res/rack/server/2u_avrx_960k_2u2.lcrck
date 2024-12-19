@@ -1,0 +1,36 @@
+title{
+    file: "2u_avrx_960k_2u2.lcrck"
+    display: "none"
+}
+setup{
+    RACK::{
+    
+    }
+}
+data{
+    type = "object"
+}
+
+connection{
+    network{
+        type: ethernet
+        loc: back
+    }
+
+    power{
+        type: ac
+        loc: back
+    }
+    vid_out_1{
+        type: hdmi
+        loc: back
+    }
+    vid_out_2
+        type: dvi_d
+        loc: back
+    }
+    vid_out_3
+        type: vga
+        loc: back
+    }
+}

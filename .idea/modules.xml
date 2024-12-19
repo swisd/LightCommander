@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../PyDev/CubicIV/.idea/CubicIV.iml" filepath="$PROJECT_DIR$/../../PyDev/CubicIV/.idea/CubicIV.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/LightCommander.iml" filepath="$PROJECT_DIR$/.idea/LightCommander.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../webopener/.idea/webopener.iml" filepath="$PROJECT_DIR$/../webopener/.idea/webopener.iml" />
+    </modules>
+  </component>
+</project>
