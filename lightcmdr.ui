@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
+ <author>nitrogen12/swisd</author>
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
@@ -44,15 +45,15 @@
        <rect>
         <x>10</x>
         <y>10</y>
-        <width>1421</width>
+        <width>1441</width>
         <height>961</height>
        </rect>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox">
+     <widget class="QComboBox" name="camera_location_box">
       <property name="geometry">
        <rect>
-        <x>1240</x>
+        <x>550</x>
         <y>980</y>
         <width>191</width>
         <height>22</height>
@@ -145,7 +146,7 @@
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>1166</x>
+        <x>480</x>
         <y>980</y>
         <width>61</width>
         <height>20</height>
@@ -155,7 +156,7 @@
        <string>Camera Loc.</string>
       </property>
      </widget>
-     <widget class="QDialogButtonBox" name="buttonBox">
+     <widget class="QDialogButtonBox" name="res_abrt_can_buttonBox">
       <property name="geometry">
        <rect>
         <x>190</x>
@@ -168,7 +169,7 @@
        <set>QDialogButtonBox::Abort|QDialogButtonBox::Cancel|QDialogButtonBox::Reset</set>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_39">
+     <widget class="QPushButton" name="vis_play">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -181,7 +182,7 @@
        <string>Play</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_40">
+     <widget class="QPushButton" name="vis_pause">
       <property name="geometry">
        <rect>
         <x>80</x>
@@ -194,7 +195,7 @@
        <string>Pause</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox_2">
+     <widget class="QComboBox" name="audio_sel_box">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -222,7 +223,7 @@
      <attribute name="title">
       <string>Sequence</string>
      </attribute>
-     <widget class="QTreeWidget" name="treeWidget_2">
+     <widget class="QTreeWidget" name="sequence_tree">
       <property name="geometry">
        <rect>
         <x>170</x>
@@ -237,7 +238,7 @@
        </property>
       </column>
      </widget>
-     <widget class="QToolButton" name="toolButton">
+     <widget class="QToolButton" name="settings_seq">
       <property name="geometry">
        <rect>
         <x>170</x>
@@ -250,7 +251,7 @@
        <string>...</string>
       </property>
      </widget>
-     <widget class="QListWidget" name="listWidget">
+     <widget class="QListWidget" name="obj_seq_list">
       <property name="geometry">
        <rect>
         <x>170</x>
@@ -260,7 +261,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QDoubleSpinBox" name="doubleSpinBox">
+     <widget class="QDoubleSpinBox" name="tx_seq_spin_double">
       <property name="geometry">
        <rect>
         <x>200</x>
@@ -280,17 +281,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QGraphicsView" name="graphicsView">
-      <property name="geometry">
-       <rect>
-        <x>460</x>
-        <y>120</y>
-        <width>256</width>
-        <height>192</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QToolBox" name="toolBox">
+     <widget class="QToolBox" name="toolBox_seq">
       <property name="geometry">
        <rect>
         <x>460</x>
@@ -307,14 +298,14 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>261</width>
-         <height>356</height>
+         <width>100</width>
+         <height>30</height>
         </rect>
        </property>
        <attribute name="label">
         <string>Light</string>
        </attribute>
-       <widget class="QPushButton" name="pushButton_31">
+       <widget class="QPushButton" name="lighton">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -327,7 +318,7 @@
          <string>LightON</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_32">
+       <widget class="QPushButton" name="lightoff">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -342,10 +333,18 @@
        </widget>
       </widget>
       <widget class="QWidget" name="transitions">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>100</width>
+         <height>30</height>
+        </rect>
+       </property>
        <attribute name="label">
         <string>Transitions</string>
        </attribute>
-       <widget class="QPushButton" name="pushButton_50">
+       <widget class="QPushButton" name="direct">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -358,7 +357,7 @@
          <string>Direct</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_51">
+       <widget class="QPushButton" name="smooth">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -373,10 +372,18 @@
        </widget>
       </widget>
       <widget class="QWidget" name="colors">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>100</width>
+         <height>30</height>
+        </rect>
+       </property>
        <attribute name="label">
         <string>Colors</string>
        </attribute>
-       <widget class="QPushButton" name="pushButton_33">
+       <widget class="QPushButton" name="color">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -389,7 +396,7 @@
          <string>Color</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_34">
+       <widget class="QPushButton" name="huesweep">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -402,7 +409,7 @@
          <string>HueSweep</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_38">
+       <widget class="QPushButton" name="colorpulse">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -415,7 +422,7 @@
          <string>ColorPulse</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_49">
+       <widget class="QPushButton" name="colorsweep">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -430,10 +437,18 @@
        </widget>
       </widget>
       <widget class="QWidget" name="fadin_out">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>100</width>
+         <height>30</height>
+        </rect>
+       </property>
        <attribute name="label">
         <string>Fade In/Out</string>
        </attribute>
-       <widget class="QPushButton" name="pushButton_28">
+       <widget class="QPushButton" name="fadeover">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -446,7 +461,7 @@
          <string>Fadeover</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_29">
+       <widget class="QPushButton" name="fadefromblack">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -459,7 +474,7 @@
          <string>Fade From Black</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_30">
+       <widget class="QPushButton" name="fadetoblack">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -485,7 +500,7 @@
        <attribute name="label">
         <string>Animations</string>
        </attribute>
-       <widget class="QPushButton" name="pushButton_35">
+       <widget class="QPushButton" name="flash">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -498,7 +513,7 @@
          <string>Flash</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_36">
+       <widget class="QPushButton" name="linemotion">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -511,7 +526,7 @@
          <string>LineMotion</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_37">
+       <widget class="QPushButton" name="linemotion_45">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -526,7 +541,7 @@
        </widget>
       </widget>
      </widget>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="seqAdd">
       <property name="geometry">
        <rect>
         <x>460</x>
@@ -539,7 +554,7 @@
        <string>Add</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="seqAddAbove">
       <property name="geometry">
        <rect>
         <x>500</x>
@@ -552,7 +567,7 @@
        <string>Add Above</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="seqAddBelow">
       <property name="geometry">
        <rect>
         <x>590</x>
@@ -565,7 +580,7 @@
        <string>Add Below</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QPushButton" name="seq_save">
       <property name="geometry">
        <rect>
         <x>670</x>
@@ -578,7 +593,7 @@
        <string>Save</string>
       </property>
      </widget>
-     <widget class="QDialogButtonBox" name="buttonBox_2">
+     <widget class="QDialogButtonBox" name="seq_save_open">
       <property name="geometry">
        <rect>
         <x>170</x>
@@ -591,7 +606,7 @@
        <set>QDialogButtonBox::Open|QDialogButtonBox::RestoreDefaults|QDialogButtonBox::Save</set>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_45">
+     <widget class="QPushButton" name="moveup_seq">
       <property name="geometry">
        <rect>
         <x>270</x>
@@ -604,7 +619,7 @@
        <string>/\</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_46">
+     <widget class="QPushButton" name="movedown_seq">
       <property name="geometry">
        <rect>
         <x>300</x>
@@ -643,6 +658,16 @@
        <string>/\</string>
       </property>
      </widget>
+     <widget class="QPlainTextEdit" name="plainTextEdit_seq">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>120</y>
+        <width>261</width>
+        <height>201</height>
+       </rect>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="rack">
      <attribute name="title">
@@ -658,7 +683,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QTreeWidget" name="treeWidget_3">
+     <widget class="QTreeWidget" name="rackstack_list">
       <property name="geometry">
        <rect>
         <x>180</x>
@@ -673,21 +698,11 @@
        </property>
       </column>
      </widget>
-     <widget class="QListWidget" name="listWidget_2">
-      <property name="geometry">
-       <rect>
-        <x>440</x>
-        <y>130</y>
-        <width>221</width>
-        <height>151</height>
-       </rect>
-      </property>
-     </widget>
      <widget class="QToolBox" name="rackPartsBox">
       <property name="geometry">
        <rect>
         <x>440</x>
-        <y>310</y>
+        <y>320</y>
         <width>221</width>
         <height>411</height>
        </rect>
@@ -696,7 +711,7 @@
        <enum>QFrame::NoFrame</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>5</number>
       </property>
       <widget class="QWidget" name="networking_box">
        <property name="geometry">
@@ -710,7 +725,7 @@
        <attribute name="label">
         <string>Networking</string>
        </attribute>
-       <widget class="QPushButton" name="pushButton_9">
+       <widget class="QPushButton" name="_1u_24_patch">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -723,7 +738,7 @@
          <string>1U 24 Port Patch Panel</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_10">
+       <widget class="QPushButton" name="_2u_48_patch">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -736,7 +751,7 @@
          <string>2U 48 Port Patch Panel</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_11">
+       <widget class="QPushButton" name="_4u_96_patch">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -749,7 +764,7 @@
          <string>4U 96 Port Patch Panel</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_12">
+       <widget class="QPushButton" name="_1u_16pG_sw_M">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -762,7 +777,7 @@
          <string>1U 16 Port Gigabit Switch - Managed</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_13">
+       <widget class="QPushButton" name="_1u_24pG_sw_M">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -775,7 +790,7 @@
          <string>1U 24 Port Gigabit Switch - Managed</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_14">
+       <widget class="QPushButton" name="_1u_48pG_sw_M_sfp">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -788,7 +803,7 @@
          <string>1U 48 Port Gigabit Switch - Managed SFP</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_15">
+       <widget class="QPushButton" name="_1u_48pG_sw_M_qsfp">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -807,14 +822,14 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>221</width>
-         <height>276</height>
+         <width>100</width>
+         <height>30</height>
         </rect>
        </property>
        <attribute name="label">
         <string>Servers</string>
        </attribute>
-       <widget class="QPushButton" name="pushButton_5">
+       <widget class="QPushButton" name="_1u_base">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -827,7 +842,7 @@
          <string>1U Basic</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_6">
+       <widget class="QPushButton" name="_2u_base">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -840,7 +855,7 @@
          <string>2U Basic</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_7">
+       <widget class="QPushButton" name="_1u_avrx_960k_1">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -853,7 +868,7 @@
          <string>1U AVRX 960K-1</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_8">
+       <widget class="QPushButton" name="_2u_avrx_960k_2u2">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -868,10 +883,18 @@
        </widget>
       </widget>
       <widget class="QWidget" name="controller_toolbox">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>100</width>
+         <height>30</height>
+        </rect>
+       </property>
        <attribute name="label">
         <string>Controllers</string>
        </attribute>
-       <widget class="QPushButton" name="pushButton_16">
+       <widget class="QPushButton" name="_2u_vk2_60c_light">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -884,7 +907,7 @@
          <string>2U VK2 60 Channel Light Controller</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_17">
+       <widget class="QPushButton" name="_2u_vk4_120c_light">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -899,10 +922,18 @@
        </widget>
       </widget>
       <widget class="QWidget" name="patch_box">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>221</width>
+         <height>249</height>
+        </rect>
+       </property>
        <attribute name="label">
         <string>Patch</string>
        </attribute>
-       <widget class="QPushButton" name="pushButton_18">
+       <widget class="QPushButton" name="_1u_24p_pan_empty_keystoneType">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -915,7 +946,7 @@
          <string>1U 24 Port Patch Panel Empty Keystone</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_19">
+       <widget class="QPushButton" name="_keystone_rj45">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -928,7 +959,7 @@
          <string>RJ45 Keystone</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_20">
+       <widget class="QPushButton" name="_keystone_xlr">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -941,7 +972,7 @@
          <string>XLR Keystone</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_21">
+       <widget class="QPushButton" name="_keystone_midi">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -954,7 +985,7 @@
          <string>MIDI Connector Keystone</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_22">
+       <widget class="QPushButton" name="_keystone_toslink">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -967,7 +998,7 @@
          <string>TOSLINK Keystone</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_23">
+       <widget class="QPushButton" name="_keystone_coax_bnc">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -982,10 +1013,18 @@
        </widget>
       </widget>
       <widget class="QWidget" name="frame_page">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>221</width>
+         <height>249</height>
+        </rect>
+       </property>
        <attribute name="label">
         <string>Frame</string>
        </attribute>
-       <widget class="QPushButton" name="pushButton_24">
+       <widget class="QPushButton" name="_12u4pO">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -998,7 +1037,7 @@
          <string>12U FourPost Open</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_25">
+       <widget class="QPushButton" name="_9u4pO">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -1011,7 +1050,7 @@
          <string>9U FourPost Open</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_26">
+       <widget class="QPushButton" name="_24u4pO">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -1024,7 +1063,7 @@
          <string>24U FourPost Open</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_27">
+       <widget class="QPushButton" name="_48uCD_Hammond">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -1038,8 +1077,26 @@
         </property>
        </widget>
       </widget>
+      <widget class="QWidget" name="amplifiers">
+       <attribute name="label">
+        <string>Amplifiers</string>
+       </attribute>
+       <widget class="QPushButton" name="RcfXps16K">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>221</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>RCF XPS 16k 4kW</string>
+        </property>
+       </widget>
+      </widget>
      </widget>
-     <widget class="QPushButton" name="pushButton_41">
+     <widget class="QPushButton" name="rackSave">
       <property name="geometry">
        <rect>
         <x>100</x>
@@ -1052,7 +1109,7 @@
        <string>Save</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_42">
+     <widget class="QPushButton" name="rackLoad">
       <property name="geometry">
        <rect>
         <x>100</x>
@@ -1104,7 +1161,7 @@
        <string>Stack List</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_43">
+     <widget class="QPushButton" name="rackUndo">
       <property name="geometry">
        <rect>
         <x>100</x>
@@ -1117,7 +1174,7 @@
        <string>Undo</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_44">
+     <widget class="QPushButton" name="rackRedo">
       <property name="geometry">
        <rect>
         <x>100</x>
@@ -1130,12 +1187,123 @@
        <string>Redo</string>
       </property>
      </widget>
+     <widget class="QPlainTextEdit" name="rackpart_pte">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>130</y>
+        <width>221</width>
+        <height>171</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTreeView" name="treeView">
+      <property name="geometry">
+       <rect>
+        <x>720</x>
+        <y>130</y>
+        <width>281</width>
+        <height>346</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_19">
+      <property name="geometry">
+       <rect>
+        <x>725</x>
+        <y>110</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Input/Output</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>105</x>
+        <y>345</y>
+        <width>31</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>UP</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>135</x>
+        <y>345</y>
+        <width>31</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>DN</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_20">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>330</y>
+        <width>47</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Position</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>105</x>
+        <y>370</y>
+        <width>61</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>OK</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_21">
+      <property name="geometry">
+       <rect>
+        <x>105</x>
+        <y>110</y>
+        <width>47</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>File</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_22">
+      <property name="geometry">
+       <rect>
+        <x>105</x>
+        <y>225</y>
+        <width>47</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Action</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="audio">
      <attribute name="title">
       <string>Audio</string>
      </attribute>
-     <widget class="QOpenGLWidget" name="openGLWidget">
+     <widget class="QOpenGLWidget" name="audio_view">
       <property name="geometry">
        <rect>
         <x>100</x>
@@ -1145,6 +1313,543 @@
        </rect>
       </property>
      </widget>
+     <widget class="QScrollBar" name="positionAudioBar">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>240</y>
+        <width>711</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QScrollBar" name="gainScrollBar">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>90</y>
+        <width>16</width>
+        <height>160</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="audioLoad_btn">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>60</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Load</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="move_left">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>260</y>
+        <width>21</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="move_right">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>260</y>
+        <width>21</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&gt;</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>310</y>
+        <width>321</width>
+        <height>261</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Mixer</string>
+      </property>
+      <widget class="QLabel" name="label_8">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>20</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Gain</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_9">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>20</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Pan</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_10">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>16</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>C</string>
+       </property>
+      </widget>
+      <widget class="Line" name="line">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>191</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="Line" name="line_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>20</width>
+         <height>111</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+      <widget class="Line" name="line_3">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>20</y>
+         <width>20</width>
+         <height>111</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_11">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>100</y>
+         <width>16</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="gain_spinbox_double">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>140</y>
+         <width>61</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="pan_spinbox">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>140</y>
+         <width>42</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QDial" name="c_gain">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>30</y>
+         <width>41</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="value">
+        <number>20</number>
+       </property>
+       <property name="invertedAppearance">
+        <bool>false</bool>
+       </property>
+       <property name="invertedControls">
+        <bool>false</bool>
+       </property>
+       <property name="notchesVisible">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QDial" name="o_gain">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>80</y>
+         <width>41</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="value">
+        <number>20</number>
+       </property>
+       <property name="notchTarget">
+        <double>3.700000000000000</double>
+       </property>
+       <property name="notchesVisible">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QDial" name="c_pan">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>30</y>
+         <width>41</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="value">
+        <number>50</number>
+       </property>
+       <property name="notchTarget">
+        <double>10.699999999999999</double>
+       </property>
+       <property name="notchesVisible">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QDial" name="o_pan">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>80</y>
+         <width>41</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="value">
+        <number>50</number>
+       </property>
+       <property name="notchTarget">
+        <double>10.699999999999999</double>
+       </property>
+       <property name="notchesVisible">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_12">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>70</y>
+         <width>47</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>L           R</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_13">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>120</y>
+         <width>47</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>L           R</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_14">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>70</y>
+         <width>51</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string> -∞      +5</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_15">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>120</y>
+         <width>51</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string> -∞      +5</string>
+       </property>
+      </widget>
+      <widget class="QProgressBar" name="r_audio_montor_bar">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>40</y>
+         <width>21</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="value">
+        <number>20</number>
+       </property>
+       <property name="textVisible">
+        <bool>false</bool>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="invertedAppearance">
+        <bool>false</bool>
+       </property>
+       <property name="textDirection">
+        <enum>QProgressBar::TopToBottom</enum>
+       </property>
+      </widget>
+      <widget class="QProgressBar" name="l_audio_monitor_bar">
+       <property name="geometry">
+        <rect>
+         <x>270</x>
+         <y>40</y>
+         <width>21</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="value">
+        <number>20</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_16">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>20</y>
+         <width>47</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Monitor</string>
+       </property>
+      </widget>
+      <widget class="QDial" name="mon_gain">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>120</y>
+         <width>31</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="value">
+        <number>20</number>
+       </property>
+       <property name="invertedAppearance">
+        <bool>false</bool>
+       </property>
+       <property name="invertedControls">
+        <bool>false</bool>
+       </property>
+       <property name="notchesVisible">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_17">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>140</y>
+         <width>51</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string> -∞      +5</string>
+       </property>
+      </widget>
+      <widget class="QDial" name="mon_pan">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>160</y>
+         <width>31</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="value">
+        <number>50</number>
+       </property>
+       <property name="notchTarget">
+        <double>10.699999999999999</double>
+       </property>
+       <property name="notchesVisible">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_18">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>190</y>
+         <width>47</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>L       R</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>310</y>
+        <width>181</width>
+        <height>261</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Sequencing</string>
+      </property>
+      <widget class="QPushButton" name="add_seqmarker">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Add</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="remove_seqmarker">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Remove</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="undoseqmarkeraction">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>60</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Undo</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>310</y>
+        <width>120</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Rack</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_4">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>570</y>
+        <width>311</width>
+        <height>221</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Plugin</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="setup">
      <attribute name="title">
@@ -1152,7 +1857,7 @@
      </attribute>
     </widget>
    </widget>
-   <widget class="QProgressBar" name="progressBar">
+   <widget class="QProgressBar" name="tx_progress">
     <property name="geometry">
      <rect>
       <x>1580</x>
@@ -1174,7 +1879,7 @@
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QLCDNumber" name="lcdNumber">
+   <widget class="QLCDNumber" name="tx_number_stat">
     <property name="geometry">
      <rect>
       <x>1520</x>
@@ -1203,7 +1908,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QTreeWidget" name="treeWidget">
+   <widget class="QTreeWidget" name="current_sequence">
     <property name="geometry">
      <rect>
       <x>1470</x>
@@ -1253,11 +1958,11 @@
      <string>Sources</string>
     </property>
    </widget>
-   <zorder>progressBar</zorder>
-   <zorder>lcdNumber</zorder>
+   <zorder>tx_progress</zorder>
+   <zorder>tx_number_stat</zorder>
    <zorder>tabWidget</zorder>
    <zorder>sources_view</zorder>
-   <zorder>treeWidget</zorder>
+   <zorder>current_sequence</zorder>
    <zorder>label</zorder>
    <zorder>label_2</zorder>
   </widget>
@@ -1296,7 +2001,7 @@
      <rect>
       <x>332</x>
       <y>130</y>
-      <width>138</width>
+      <width>135</width>
       <height>169</height>
      </rect>
     </property>
@@ -1437,4 +2142,21 @@
  </tabstops>
  <resources/>
  <connections/>
+ <designerdata>
+  <property name="gridDeltaX">
+   <number>5</number>
+  </property>
+  <property name="gridDeltaY">
+   <number>5</number>
+  </property>
+  <property name="gridSnapX">
+   <bool>true</bool>
+  </property>
+  <property name="gridSnapY">
+   <bool>true</bool>
+  </property>
+  <property name="gridVisible">
+   <bool>true</bool>
+  </property>
+ </designerdata>
 </ui>

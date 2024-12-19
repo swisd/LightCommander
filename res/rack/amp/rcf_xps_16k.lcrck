@@ -1,0 +1,16 @@
+title{
+    file: "rcf_xps_16k.lcrck"
+    display: "RCF XPS 16K 4kW"
+}
+setup{
+    RACK::{
+    
+    }
+}
+data{
+
+}
+
+connection{
+
+}
