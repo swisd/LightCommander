@@ -1,6 +1,7 @@
 title{
     file: "2u_avrx_960k_2u2.lcrck"
-    display: "none"
+    display: "2u_960k_avrx.png"
+    type: "rack"
 }
 setup{
     RACK::{
