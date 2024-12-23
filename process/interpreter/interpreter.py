@@ -1,5 +1,6 @@
 import sys
 
+from v2.basic import TT_MUL, TT_DIV, TT_PLUS, TT_MINUS
 
 # read arguments
 # program_path = sys.argv[1]
@@ -77,6 +78,7 @@ TOKEN_PLUS         = 'TOKEN_PLUS'
 TOKEN_MINUS        = 'TOKEN_MINUS'
 TOKEN_MUL          = 'TOKEN_MUL'
 TOKEN_DIV          = 'TOKEN_DIV'
+TOKEN_EOF          = 'TOKEN_EOF'
 
 class Token:
     def __init__(self, type_, value=None):
@@ -221,6 +223,12 @@ class Parser:
             return NumberNode(tok)
 
     def term(self):
+        return self.bin_op(self.factor, (TT_MUL, TT_DIV))
+
+    def expr(self):
+        return self.bin_op(self.term, (TT_PLUS, TT_MINUS))
+
+    def bin_op(self, func, ops):
         left = self.factor()
 
         while self.current_tok in (TOKEN_DIV, TOKEN_MUL):
@@ -230,12 +238,6 @@ class Parser:
             left = BinOpNode(left, op_tok, right)
 
         return left
-
-    def expr(self):
-        pass
-
-    def bin_op(self):
-        pass
     # todo: continue: https://youtu.be/RriZ4q4z9gU?list=PLZQftyCk7_SdoVexSmwy_tBgs7P0b97yD&t=450
 
 ##########################
