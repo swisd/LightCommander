@@ -1,37 +1,95 @@
-title{
+title {
     file: "2u_avrx_960k_2u2.lcrck"
     display: "2u_960k_avrx.png"
     type: "rack"
 }
-setup{
-    RACK::{
-    
+setup {
+    RACK:: {
+        space: 2
+        depth: "half"
+        width: 19
+        mount: rack
     }
 }
-data{
-    type = "object"
+data {
+    type: "object"
 }
 
-connection{
-    network{
+connection {
+    network_0 {
         type: ethernet
         loc: back
+        properties {
+            speed: 1000000
+        }
+    }
+    network_1 {
+        type: ethernet
+        loc: back
+        properties {
+            speed: 1000000
+        }
     }
 
-    power{
+    power_0 {
         type: ac
         loc: back
+        properties {
+            power_consume: 1000
+        }
     }
-    vid_out_1{
+    vid_out_0 {
         type: hdmi
         loc: back
+        properties {
+            max_freq: 240
+            res_at_max: 1080
+        }
     }
-    vid_out_2
+    vid_out_1 {
         type: dvi_d
         loc: back
+        properties {
+            max_freq: 144
+            res_at_max: 1080
+        }
     }
-    vid_out_3
+    vid_out_2 {
         type: vga
         loc: back
+        properties {
+            max_freq: 85
+            res_at_max: 2048
+        }
+    }
+    audio_out_0 {
+        type: eighth
+        loc: back
+        properties {
+            sample_rate: 48000
+        }
+    }
+}
+
+display {
+    led_power {
+        loc_x: 10
+        loc_y: 5
+        color: "green"
+    }
+    led_disk {
+        loc_x: 12
+        loc_y: 5
+        color: "blue"
+    }
+    led_net {
+        loc_x: 14
+        loc_y: 5
+        color: "yellow"
+    }
+    led_fault {
+        loc_x: 16
+        loc_y: 5
+        color: "red"
     }
 }
