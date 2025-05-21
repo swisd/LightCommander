@@ -1,0 +1,24 @@
+Map File Structure
+
+Extension - .map
+
+header:
+    map name
+    dimensions (maybe)
+    propreties
+    date/time data
+    author
+    description
+
+body:
+
+    item entry (using {}):
+        <item_name> {
+            object: <object>
+            posX: <pos-x>
+            posY: <pos-y>
+            posZ: <pos-z>
+            props {
+                <properties of <object>>
+            }
+        }

@@ -3,7 +3,7 @@ import os
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
-
+from modules import statusMessage
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -13,6 +13,8 @@ class Ui_MainWindow(object):
         MainWindow.setStyleSheet(u"")
         MainWindow.setDocumentMode(False)
         MainWindow.setTabShape(QTabWidget.Triangular)
+        self.frameref = 0
+        self.condition = "Ready"
         self.actionSettings = QAction(MainWindow)
         self.actionSettings.setObjectName(u"actionSettings")
         self.actionPower = QAction(MainWindow)
@@ -2167,6 +2169,7 @@ class Ui_MainWindow(object):
 
 
         QMetaObject.connectSlotsByName(MainWindow)
+        statusMessage(self, "empty")
     # setupUi
 
     def retranslateUi(self, MainWindow):
