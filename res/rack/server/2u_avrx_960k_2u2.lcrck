@@ -1,3 +1,5 @@
+## Default rack file for '2U AVRX 960K-2U2'
+
 title {
     file: "2u_avrx_960k_2u2.lcrck"
     display: "2u_960k_avrx.png"
@@ -9,6 +11,10 @@ setup {
         depth: "half"
         width: 19
         mount: rack
+        img_file_front: "2u_avrx_960k_2u2.front.png"
+        img_file_back: "2u_avrx_960k_2u2.back.png"
+        ## Dimension0 stays null since it is not needed
+        dim0: @x00
     }
 }
 data {
@@ -43,7 +49,7 @@ connection {
         loc: back
         properties {
             max_freq: 240
-            res_at_max: 1080
+            res_at_max: 2048
         }
     }
     vid_out_1 {
@@ -69,27 +75,42 @@ connection {
             sample_rate: 48000
         }
     }
+    term_bidi_0 {
+        type: db9
+        loc: back
+        propreties {
+            protocol: "rs485"
+        }
+    }
 }
 
 display {
     led_power {
+        type: "status-led"
         loc_x: 10
         loc_y: 5
         color: "green"
+        tie: LED_power
     }
     led_disk {
+        type: "status-led"
         loc_x: 12
         loc_y: 5
         color: "blue"
+        tie: LED_disk_activity
     }
     led_net {
+        type: "status-led"
         loc_x: 14
         loc_y: 5
         color: "yellow"
+        tie: LED_network_activity
     }
     led_fault {
+        type: "status-led"
         loc_x: 16
         loc_y: 5
         color: "red"
+        tie: LED_fault
     }
 }

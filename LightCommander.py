@@ -2,7 +2,7 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow
 from PyQt5.QtCore import QFile, QTextStream
-from ui_lightcmdr import Ui_MainWindow
+from ui_lightcmdr import *
 import qdarktheme
 app = QApplication(sys.argv)
 #app.setStyleSheet(qdarktheme.load_stylesheet())
