@@ -1,16 +1,14 @@
-title{
+title {
     file: "1u_avrx_960k_1.lcrck"
-    display: "none"
-}
-setup{
-    RACK::{
-    
-    }
-}
-data{
+    displayImg: "none"
+};
+setup { };
+RACK { };
 
-}
+data {
+
+};
 
 connection{
 
-}
+};

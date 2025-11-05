@@ -1,0 +1,39 @@
+{
+    "title": {
+        "file": "LC256A2-R2-light-multi.lcrck",
+        "displayImg": "LC256A2-R2-light-multi.png",
+        "type": "rack",
+        "displayName": "LC256A2 R2 Light Controller"
+    },
+    "RACK": {
+        "space": 4,
+        "depth": "half",
+        "width": 19,
+        "mount": "rack",
+        "img_file_front": "LC256A2-R2-light-multi-front.png",
+        "img_file_back": "LC256A2-R2-light-multi-back.png",
+        "dim0": "0x00"
+    },
+    "setup": {},
+    "data": {
+        "type": "object"
+    },
+    "connection": {
+        "group.dmx_out": {},
+        "group.dmx_in": {},
+        "group.strobe_out": {},
+        "group.smoke_out": {},
+        "group.trig_out": {},
+        "group.trig_in": {},
+        "group.freq_gen_out": {},
+        "group.multibus_bidi": {},
+        "group.audio": {},
+        "group.midi": {},
+        "group.network": {},
+        "group.rf": {},
+        "group.usb": {},
+        "group.serial": {},
+        "group.power": {}
+    },
+    "display": {}
+}

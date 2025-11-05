@@ -1,16 +1,13 @@
 title{
     file: "12u_fp_open.lcrck"
-    display: "none"
-}
-setup{
-    RACK::{
-    
-    }
-}
+    displayImg: "none"
+};
+setup{ };
+RACK{ };
 data{
 
-}
+};
 
 connection{
 
-}
+};

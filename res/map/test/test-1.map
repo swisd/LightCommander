@@ -1,0 +1,70 @@
+.dataheader {
+    name: "TEST MAP test-1"
+    description: "Test Map (map0)\nFOR TESTING USE ONLY (light on a tower)"
+    author: "n12"
+    season: "summer"
+    tod: 15, 00
+    toy: 09
+    condition: "clear"
+    temp: 90
+    dimX: -1
+    dimY: -1
+};
+
+.module {
+    require {
+        structure: "0.1.0"
+        light: "0.1.0"
+    }
+}
+
+.map {
+    items {
+        item tower {
+            name: "tower"
+            object: "20halfSquareTruss_med"
+            posX: 0
+            posY: 0
+            posZ: 0
+            rotX: 90
+            rotY: 0
+            rotZ: 0
+            props {
+                type: "structure"
+               ## triggerGroup: 0
+            },
+        },
+        item light {
+            name: "light"
+            object: "basicTurretLEDLight"
+            posX: 0
+            posY: 0
+            posZ: 240 ##sm = 10' = 120', med = 20' = 240', lg = ...
+            rotX: 0
+            rotY: 0
+            rotZ: 0
+            props {
+                type: "controllableLight"
+                triggerGroup: 0
+            };
+        };
+    },
+
+    triggers {
+        group 0 {
+            groupName: "test-0"
+            groupIndex: 0
+            trigger: "Controller.ControlVis.T.PRESS"
+            tie: "Controller.ControlVis.T"
+            ref: @x00
+        };
+    },
+
+    audio {
+
+    },
+
+    propreties {
+
+    };
+};

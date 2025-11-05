@@ -1,0 +1,18 @@
+inputs {
+    light {
+        type: "id"
+    };
+    trig {
+        type: "trigger"
+    };
+};
+
+program {
+    while trig {
+        on light {
+            light.on: false
+        };
+    };
+};
+
+outputs {};

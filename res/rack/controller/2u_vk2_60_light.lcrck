@@ -1,16 +1,14 @@
-title{
+title {
     file: "2u_vk2_60_light.lcrck"
-    display: "none"
-}
-setup{
-    RACK::{
-    
-    }
-}
-data{
+    displayImg: "none"
+};
+setup {};
+RACK {};
+
+data {
     type = "object"
-}
+};
 
-connection{
+connection {
 
-}
+};

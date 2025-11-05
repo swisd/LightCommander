@@ -1,16 +1,13 @@
-title{
+title {
     file: "rcf_xps_16k.lcrck"
-    display: "RCF XPS 16K 4kW"
-}
-setup{
-    RACK::{
-    
-    }
-}
-data{
+    displayImg: "rcf_xps_16k.png"
+    displayName: "RCF XPS 16K 4kW"
+};
 
-}
+setup {};
 
-connection{
+RACK {};
 
-}
+data {};
+
+connection {};

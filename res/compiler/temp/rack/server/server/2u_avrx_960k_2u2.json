@@ -1,0 +1,111 @@
+{
+    "title": {
+        "file": "2u_avrx_960k_2u2.lcrck",
+        "displayImg": "2u_960k_avrx.png",
+        "type": "rack"
+    },
+    "setup": {},
+    "RACK": {
+        "space": 2,
+        "depth": "half",
+        "width": 19,
+        "mount": "rack",
+        "img_file_front": "2u_avrx_960k_2u2.front.png",
+        "img_file_back": "2u_avrx_960k_2u2.back.png",
+        "dim0": "0x00"
+    },
+    "data": {
+        "type": "object"
+    },
+    "connection": {
+        "network_0": {
+            "type": "ethernet",
+            "loc": "back",
+            "properties": {
+                "speed": 1000000
+            }
+        }
+    },
+    "network_1": {
+        "type": "ethernet",
+        "loc": "back",
+        "properties": {
+            "speed": 1000000
+        }
+    },
+    "power_0": {
+        "type": "ac",
+        "loc": "back",
+        "properties": {
+            "power_consume": 1000
+        }
+    },
+    "vid_out_0": {
+        "type": "hdmi",
+        "loc": "back",
+        "properties": {
+            "max_freq": 240,
+            "res_at_max": 2048
+        }
+    },
+    "vid_out_1": {
+        "type": "dvi_d",
+        "loc": "back",
+        "properties": {
+            "max_freq": 144,
+            "res_at_max": 1080
+        }
+    },
+    "vid_out_2": {
+        "type": "vga",
+        "loc": "back",
+        "properties": {
+            "max_freq": 85,
+            "res_at_max": 2048
+        }
+    },
+    "audio_out_0": {
+        "type": "eighth",
+        "loc": "back",
+        "properties": {
+            "sample_rate": 48000
+        }
+    },
+    "term_bidi_0": {
+        "type": "db9",
+        "loc": "back",
+        "propreties": {
+            "protocol": "rs485"
+        }
+    },
+    "display": {
+        "led_power": {
+            "type": "status-led",
+            "loc_x": 10,
+            "loc_y": 5,
+            "color": "green",
+            "tie": "LED_power"
+        }
+    },
+    "led_disk": {
+        "type": "status-led",
+        "loc_x": 12,
+        "loc_y": 5,
+        "color": "blue",
+        "tie": "LED_disk_activity"
+    },
+    "led_net": {
+        "type": "status-led",
+        "loc_x": 14,
+        "loc_y": 5,
+        "color": "yellow",
+        "tie": "LED_network_activity"
+    },
+    "led_fault": {
+        "type": "status-led",
+        "loc_x": 16,
+        "loc_y": 5,
+        "color": "red",
+        "tie": "LED_fault"
+    }
+}

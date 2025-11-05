@@ -1,0 +1,44 @@
+{
+    ".dataheader": {
+        "name": "TEST MAP map0",
+        "description": "Test Map (map0)\\nFOR TESTING USE ONLY",
+        "author": "n12",
+        "season": "summer",
+        "tod": "15,.00",
+        "toy": 9,
+        "condition": "clear",
+        "temp": 90,
+        "dimX": -1,
+        "dimY": -1
+    },
+    ".map": {
+        "items": {
+            "item": {
+                "name": "item1",
+                "object": "none-object",
+                "posX": 0,
+                "posY": 0,
+                "posZ": 0,
+                "rotX": 0,
+                "rotY": 0,
+                "rotZ": 0,
+                "props": {
+                    "type": "noneType",
+                    "triggerGroup": 0
+                }
+            }
+        }
+    },
+    "triggers": {
+        "group": {
+            "groupName": "test-0",
+            "groupIndex": 0,
+            "trigger": "\"Controller.ControlVis.T",
+            ":": "PRESS\"",
+            "tie": "Controller.ControlVis.T",
+            "ref": "0x00"
+        }
+    },
+    "audio": {},
+    "propreties": {}
+}
