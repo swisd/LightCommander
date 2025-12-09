@@ -39,6 +39,7 @@ connection {
     group usb {}
     group serial {}
     group power {}
+    group displayc {}
 };
 
 display {

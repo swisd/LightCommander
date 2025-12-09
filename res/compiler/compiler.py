@@ -22,7 +22,10 @@
 import os
 import json
 import re
+import time
 from pathlib import Path
+
+from torch.masked import as_masked_tensor
 
 
 def parse_custom_format(text: str):
@@ -161,6 +164,7 @@ def parse_custom_format(text: str):
 
 
 def convert_file(input_path: str, output_root: str = "./temp"):
+    time.sleep(0.1)
     input_path = Path(input_path)
     with open(input_path, "r", encoding="utf-8") as f:
         content = f.read()
@@ -175,41 +179,79 @@ def convert_file(input_path: str, output_root: str = "./temp"):
     output_path = Path(output_root) / relative_path
     output_path = output_path.with_suffix(".json")
 
+
+
     os.makedirs(output_path.parent, exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(parsed, f, indent=4, ensure_ascii=False)
 
-    print(f"✅ Converted {input_path} → {output_path}")
+def cfid_recursive(directory_path):
+    """
+    Counts the total number of files in a given directory and its subdirectories.
+
+    Args:
+        directory_path (str): The path to the directory to start counting from.
+
+    Returns:
+        int: The total count of files.
+    """
+    file_count = 0
+    amtx=0
+    print(f"\rdiscovered {amtx} files in {directory_path}", end="")
+    for root, _, files in os.walk(directory_path):
+        file_count += len(files)
+        amtx += len(files)
+        print(f"\rdiscovered {amtx} files in {directory_path}", end="")
+    print(f"\rdiscovered {amtx} files in {directory_path}", end="\n")
+    return file_count
 
 def run_bulk(basepath, folders, temproot="./temp/"):
     for folder in folders:
+        amt = 0
         sf0 = basepath + folder
+        size = cfid_recursive(sf0)
         for root, dirs, files in os.walk(sf0):
+            print(f"\rcompiled {amt} in {folder}\t\t\t\t({round((amt/size)*100)}%)", end="")
             for file in files:
                 convert_file(root + "/" + file, temproot + "/" + root.replace(basepath, "") + "/")
+                amt += 1
+                print(f"\rcompiled {amt} in {folder}\t\t\t\t({round((amt/size)*100)}%)", end="")
             for folder0 in dirs:
                 sf1 = basepath + folder0 + "/" + folder
                 for root, dirs, files in os.walk(sf1):
                     for file in files:
                         convert_file(root + "/" + file, temproot + "/" + root.replace(basepath, "") + "/")
+                        amt += 1
+                        print(f"\rcompiled {amt} in {folder}\t\t\t\t({round((amt/size)*100)}%)", end="")
                     for folder1 in dirs:
                         sf2 = sf1 + "/" + folder1
                         for root, dirs, files in os.walk(sf2):
                             for file in files:
                                 convert_file(root + "/" + file, temproot + "/" + root.replace(basepath, "") + "/")
+                                amt += 1
+                                print(f"\rcompiled {amt} in {folder}\t\t\t\t({round((amt/size)*100)}%)", end="")
                             for folder2 in dirs:
                                 sf3 = sf2 + "/" + folder2
                                 for root, dirs, files in os.walk(sf3):
                                     for file in files:
                                         convert_file(root + "/" + file, temproot + "/" + root.replace(basepath, "") + "/")
+                                        amt += 1
+                                        print(f"\rcompiled {amt} in {folder}\t\t\t\t({round((amt/size)*100)}%)", end="")
                                     for folder3 in dirs:
                                         sf4 = sf3 + "/" + folder3
                                         for root, dirs, files in os.walk(sf4):
                                             for file in files:
                                                 convert_file(root + "/" + file, temproot + "/" + root.replace(basepath, "") + "/")
+                                                amt += 1
+                                                print(f"\rcompiled {amt} in {folder}\t\t\t\t({round((amt/size)*100)}%)", end="")
                                             for folder4 in dirs:
                                                 print(f"max depth reached {folder4}")
                                                 pass
+        print(f"\rcompiled {amt} in {folder}\t\t\t\t({round((amt / size) * 100)}%)", end="\n")
+
+    print("\rcomplete", end="\n\n")
+
+
 
 
 

@@ -1,5 +1,5 @@
-object: "none";
-keyframes {
+.object: "none";
+.keyframes {
     .0 {
         keyframe: ""
     }

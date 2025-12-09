@@ -36,10 +36,10 @@
         },
         item light {
             name: "light"
-            object: "basicTurretLEDLight"
+            object: "basicTurretLEDLightRGBW"
             posX: 0
             posY: 0
-            posZ: 240 ##sm = 10' = 120', med = 20' = 240', lg = ...
+            posZ: 240 ##sm = 10' = 120', med = 20' = 240', lg = ... for "20halfSquareTruss"
             rotX: 0
             rotY: 0
             rotZ: 0

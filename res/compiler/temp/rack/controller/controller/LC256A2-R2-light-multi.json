@@ -33,7 +33,8 @@
         "group.rf": {},
         "group.usb": {},
         "group.serial": {},
-        "group.power": {}
+        "group.power": {},
+        "group.displayc": {}
     },
     "display": {}
 }
